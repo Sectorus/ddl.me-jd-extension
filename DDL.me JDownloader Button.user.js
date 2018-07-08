@@ -21,15 +21,21 @@ unsafeWindow.document.getElementById("adminmenu").innerHTML += submitForm;
 
 unsafeWindow.getDlLinks = function getDlLinks()
 {
-
-	var dropDown = unsafeWindow.document.getElementsByClassName("select_content")[0];
-	var parts = dropDown.getElementsByTagName("a");
-	for(var i = 0; i < parts.length; i++)
+	try
 	{
-		parts[i].click();
-		unsafeWindow.getOpenload();
-		dropDown = unsafeWindow.document.getElementsByClassName("select_content")[0];
-		parts = dropDown.getElementsByTagName("a");
+		var dropDown = unsafeWindow.document.getElementsByClassName("select_content")[0];
+		var parts = dropDown.getElementsByTagName("a");
+		for(var i = 0; i < parts.length; i++)
+		{
+			parts[i].click();
+			unsafeWindow.getOpenload();
+			dropDown = unsafeWindow.document.getElementsByClassName("select_content")[0];
+			parts = dropDown.getElementsByTagName("a");
+		}
+	}
+	catch(e)
+	{
+		console.log("Only one part!");
 	}
 }
 unsafeWindow.getOpenload = function getOpenload(){
@@ -47,7 +53,7 @@ unsafeWindow.getDlLinks();
 unsafeWindow.sendToJD = function sendToJD()
 {
 	var form = unsafeWindow.document.getElementById("jd");
-    form.innerHTML += "<INPUT TYPE='hidden' NAME='package' VALUE='TestName'>";
+	form.innerHTML += "<INPUT TYPE='hidden' NAME='package' VALUE='TestName'>";
 	form.innerHTML += "<INPUT TYPE='hidden' NAME='urls' VALUE='" + openload + "'>";
 	form.submit();
 }
