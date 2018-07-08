@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DDL.me JDownloader Button
 // @namespace    http://de.ddl.me/
-// @version      1.1
+// @version      1.1.1
 // @description  try to take over the world!
 // @author       Sector
 // @include      *de.ddl.me/*
@@ -35,6 +35,7 @@ unsafeWindow.getDlLinks = function getDlLinks()
 	}
 	catch(e)
 	{
+		unsafeWindow.getOpenload();
 		console.log("Only one part!");
 	}
 }
