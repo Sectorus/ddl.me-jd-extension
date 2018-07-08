@@ -35,8 +35,8 @@ unsafeWindow.getDlLinks = function getDlLinks()
 	}
 	catch(e)
 	{
-		unsafeWindow.getOpenload();
 		console.log("Only one part!");
+		unsafeWindow.getOpenload();
 	}
 }
 unsafeWindow.getOpenload = function getOpenload(){
