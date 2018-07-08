@@ -16,6 +16,7 @@ var links = [];
 var openload = "";
 var bar = unsafeWindow.document.getElementsByClassName("multibtn dlmode")[0].getElementsByTagName("div")[0];
 var submitForm = "<FORM id='jd' ACTION='http://127.0.0.1:9666/flash/add' target='hidden' METHOD='POST' hidden></FORM>"
+var packageName = unsafeWindow.document.getElementById("itemType").innerHTML.split('(')[0];
 unsafeWindow.document.getElementById("adminmenu").innerHTML += submitForm;
 
 
@@ -54,7 +55,7 @@ unsafeWindow.getDlLinks();
 unsafeWindow.sendToJD = function sendToJD()
 {
 	var form = unsafeWindow.document.getElementById("jd");
-	form.innerHTML += "<INPUT TYPE='hidden' NAME='package' VALUE='TestName'>";
+	form.innerHTML += "<INPUT TYPE='hidden' NAME='package' VALUE='"+packageName+"'>";
 	form.innerHTML += "<INPUT TYPE='hidden' NAME='urls' VALUE='" + openload + "'>";
 	form.submit();
 }
