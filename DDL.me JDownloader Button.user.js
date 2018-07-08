@@ -6,6 +6,7 @@
 // @author       Sector
 // @include      *de.ddl.me/*
 // @grant        unsafeWindow
+// @icon		 http://de.ddl.me/favicon.ico
 // @run-at       document-idle
 // ==/UserScript==
 
